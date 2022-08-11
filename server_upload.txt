@@ -14,7 +14,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mys
 Step 3 : set html folder to public [ chmod 777 html/ ]
 Firewall er ag porjontu process korte hobe
 
-Step 4 : Update to php version 8
+Step 3.1: php install
+https://computingforgeeks.com/how-to-install-php-7-4-on-centos-7/
+
+Step 4 (optional) : Update to php version 8
 https://computingforgeeks.com/how-to-install-php-8-on-centos-linux/
 
 Step 5 : install laravel
