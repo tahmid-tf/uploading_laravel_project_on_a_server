@@ -71,6 +71,15 @@ Go to - sudo nano /etc/httpd/conf.d/phpMyAdmin.conf
 
 all granted and Allow from all er line ta follow korte hobe
 
+
+For Ubuntu (phpmyadmin)
+
+sudo apt-get install phpmyadmin
+
+https://www.youtube.com/watch?v=VpygRfO8w9k&ab_channel=Utshuk
+
+https://hackthestuff.com/article/phpmyadmin-error-the-requested-url-was-not-found-on-this-server#:~:text=This%20error%20comes%20because%20your,%2Fetc%2Fapache2%2Fapache2.
+
 <IfModule mod_authz_core.c>
 # Apache 2.4
 <RequireAny>
