@@ -59,6 +59,10 @@ Step 15: ssl and https setup
 
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7
 
+for ubuntu ssl and https
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
+
 Step 16 : phpmyadmin integration
 
 https://www.youtube.com/watch?v=yLj9_ssjIRY&ab_channel=HappyGhost
