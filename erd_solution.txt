@@ -1,0 +1,18 @@
+1. Http trace or track solution
+
+RewriteEngine on
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+
+
+
+2. Web application inflormation disclosure
+
+App_Debug = false from .env
+
+
+
+3. Clickjacking problem
+
+https://stackoverflow.com/questions/62059386/how-to-set-x-frame-options-in-laravel-project
