@@ -20,6 +20,10 @@ Then jei domain er shthe point kora hoise otake likhte hobe & carefully step by 
 
 sudo /opt/bitnami/bncert-tool
 
+if DNS problem shows,
+
+sudo /opt/bitnami/bncert-tool --perform_public_ip_validation 0 --perform_dns_validation 0
+
 
 4.
 then bitnami sslconf thekeo root thik kore dite hobe
