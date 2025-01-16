@@ -1,0 +1,41 @@
+Step 1: Install
+
+npm install -g pm2
+
+Step 2: run the dev command based on location,
+
+pm2 start npm --name "npm-dev" -- run dev --prefix /home/bitnami/htdocs/erp1
+
+Step 3: Save the process
+
+pm2 save
+
+Step 4: Set PM2 to start on system boot
+
+pm2 startup
+
+-------------------------------------------------------------------------------------------
+
+Step 1: View Running Processes
+
+sudo pm2 list
+
+Step 2: Stop the Process
+
+Using the App name
+pm2 stop <app-name>
+pm2 stop npm-dev
+
+Using the Process ID
+pm2 stop <id>
+pm2 stop 0
+
+Stop all the process
+pm2 stop all
+
+Step 2: Delete a Process
+pm2 delete <app-name or id>
+pm2 delete npm-dev
+
+Step 3: Check Process Status
+pm2 list
