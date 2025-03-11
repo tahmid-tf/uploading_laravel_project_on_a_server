@@ -1,0 +1,102 @@
+Step 0 (if necessary) : Connecting Filezilla with AWS lightsail [ included putty + puttygen setup on linux ],
+
+https://github.com/tahmid-tf/AWS_lightsail_filezilla
+
+Step 1 : install necessary files and update,
+sudo yum update -y
+sudo yum install nano
+sudo yum install dnf
+sudo yum install git
+
+Step 2 : For lampp setup follow this doc,
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7
+
+Step 3 : set html folder to public [ chmod 777 html/ ]
+Firewall er ag porjontu process korte hobe
+
+Step 3.1: php install
+https://computingforgeeks.com/how-to-install-php-7-4-on-centos-7/
+
+Step 4 (optional) : Update to php version 8
+https://computingforgeeks.com/how-to-install-php-8-on-centos-linux/
+
+Step 5 : install laravel
+https://operavps.com/how-to-install-laravel-on-centos-7/
+
+Step 6 : sudo chmod 777 html/ [ Apache html directory ]
+
+Step 7 : cloning git repo in html directory
+
+Step 8 : composer update
+
+Step 9 : Follow chmod options from laravel setup also then chmod 777 to [ storage, public vendior ]
+
+Step 10 : Virtual host option setup
+
+Step 11 : Database configuraton fixing
+
+getsebool -a | grep httpd
+sudo setsebool -P httpd_can_network_connect_db 1
+
+Step 12 : smtp config fix : 
+
+sudo setsebool -P httpd_can_network_connect on
+sudo setsebool -P httpd_can_sendmail on
+
+Step 13 : connect with database normally [with localhost or aws database]
+
+Step 14 : Import database from cmdmysql> 
+
+use your_db_name;
+
+mysql> source /opt/file.sql;
+
+Step extra : Database export cmd 
+
+sudo mysqldump -uroot -pPassword@123 agrigate > db_backup.sql
+
+Step 15: ssl and https setup
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7
+
+for ubuntu ssl and https
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
+
+Step 16 : phpmyadmin integration
+
+https://www.youtube.com/watch?v=yLj9_ssjIRY&ab_channel=HappyGhost
+
+Install phpmyadmin - 
+sudo yum install epel-release
+sudo yum install phpmyadmin
+
+Go to - sudo nano /etc/httpd/conf.d/phpMyAdmin.conf
+
+all granted and Allow from all er line ta follow korte hobe
+
+
+For Ubuntu (phpmyadmin)
+
+sudo apt-get install phpmyadmin
+
+https://www.youtube.com/watch?v=VpygRfO8w9k&ab_channel=Utshuk
+
+https://hackthestuff.com/article/phpmyadmin-error-the-requested-url-was-not-found-on-this-server#:~:text=This%20error%20comes%20because%20your,%2Fetc%2Fapache2%2Fapache2.
+
+<IfModule mod_authz_core.c>
+# Apache 2.4
+<RequireAny>
+Require all granted
+Require ip ::1
+</RequireAny>
+</IfModule>
+<IfModule !mod_authz_core.c>
+# Apache 2.2
+Order Deny,Allow
+Deny from All
+Allow from All
+Allow from ::1
+</IfModule>
+</Directory>
+

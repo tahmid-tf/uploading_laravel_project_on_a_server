@@ -1,0 +1,50 @@
+Step 1:
+
+# create Repository
+/etc/yum.repos.d/MariaDB.repo
+
+Step 2:
+
+#MariaDB 10.3 Centos repository list created 2018-05-25 19:02 UTC
+#http://downloads.mariadb.org/mariadb/repositories/
+[mariadb]
+name=MariaDB
+baseurl=http://yum.mariadb.org/10.3/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+
+
+then,
+sudo yum update -y
+
+
+# start install
+sudo yum install MariaDB-server MariaDB-client
+
+# start service
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+
+# check status
+sudo systemctl status mariadb
+
+# run secure
+sudo mysql_secure_installation
+
+#connect to database
+mysql -u root -p
+
+# show tables
+SHOW DATABASES;
+
+
+---------------------------- optional -------------------------------
+
+# allow firewall
+firewall-cmd --zone=public --add-port=55555/tcp --permanent
+firewall-cmd --reload
+
+# allow Remote
+GRANT ALL PRIVILEGES ON *.* TO 'USERNAME'@'%' IDENTIFIED BY 'PASSWORD' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+FLUSH HOSTS;
